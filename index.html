@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milagros 🌹</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="hero-cans">
+  <img class="can can-1" src="cocacola.png" alt="" />
+  <img class="can can-2" src="cocacola.png" alt="" />
+  <img class="can can-3" src="cocacola.png" alt="" />
+  <img class="can can-4" src="cocacola.png" alt="" />
+</div>
+
+  <!-- Pétalos flotantes (generados por JS) -->
+  <div class="petals-container" id="petals"></div>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ── PORTADA ── -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-tag"> Una pagina muy under para </div>
+      <h1 class="hero-title">
+        <span class="line-top">Milagros</span>
+        <span class="line-bottom">RM</span>
+      </h1>
+      <p class="hero-sub"></p>
+      <button class="hero-btn" id="enterBtn">
+        <span>Entrar</span>
+        <div class="btn-ring"></div>
+      </button>
+    </div>
+    <div class="hero-cans">
+  <img class="can can-1" src="./cocacola.png" alt="" />
+  <img class="can can-2" src="./cocacola.png" alt="" />
+  <img class="can can-3" src="./cocacola.png" alt="" />
+  <img class="can can-4" src="./cocacola.png" alt="" />
+  <img class="can can-5" src="./cocacola.png" alt="" />
+  <img class="can can-6" src="./cocacola.png" alt="" />
+  <img class="can can-7" src="./cocacola.png" alt="" />
+  <img class="can can-8" src="./cocacola.png" alt="" />
+
+</div>
+    <div class="scroll-hint">↓</div>
+  </section>
+
+  <!-- ── GALERÍA DE FOTOS ── -->
+  <section class="section" id="galeria">
+    <div class="section-label">Galeria  </div>
+    <h2 class="section-title">Album de fotos<br><em></em></h2>
+
+    <div class="gallery">
+
+      <div class="upload-bar">
+  <label class="upload-btn" for="photoUpload">
+    📷 Agregar foto
+    <input type="file" id="photoUpload" accept="image/*" multiple hidden />
+  </label>
+  <span class="upload-hint">Elegí hasta 5 fotos desde tu dispositivo</span>
+</div>
+
+      <div class="photo-card" data-msg="Que foto con aura esta">
+        <div class="photo-frame">
+          <img src="fotos/foto1.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto1.png</span></div>
+        </div>
+        <div class="photo-caption">Cool</div>
+      </div>
+
+      <div class="photo-card" data-msg="Que buena hamburguesa">
+        <div class="photo-frame">
+          <img src="fotos/foto2.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto2.png</span></div>
+        </div>
+        <div class="photo-caption">Gorditos pou</div>
+      </div>
+
+      <div class="photo-card large" data-msg="La cara con la que me miras siempre">
+        <div class="photo-frame">
+          <img src="fotos/foto3.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto3.png</span></div>
+        </div>
+        <div class="photo-caption">Que simpaticaa</div>
+      </div>
+
+      <div class="photo-card" data-msg="Mi foto fav">
+        <div class="photo-frame">
+          <img src="fotos/foto4.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto4.png</span></div>
+        </div>
+        <div class="photo-caption">Que facha por dios</div>
+      </div>
+
+      <div class="photo-card" data-msg="Que bien te queda la de River">
+        <div class="photo-frame">
+          <img src="fotos/foto5.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto5.png</span></div>
+        </div>
+        <div class="photo-caption">Sin duda la mejor</div>
+      </div>
+
+      <div class="photo-card" data-msg="Muy buen helado">
+        <div class="photo-frame">
+          <img src="fotos/foto6.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto5.png</span></div>
+        </div>
+        <div class="photo-caption">Tan vos</div>
+      </div>
+
+      <div class="photo-card" data-msg="Que recuerdos esa noche JAJAJAJA">
+        <div class="photo-frame">
+          <img src="fotos/foto7.png" alt="Nosotros" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="photo-placeholder">📷<span>foto7.png</span></div>
+        </div>
+        <div class="photo-caption">La noche del vino...</div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  
+
+  <<!-- RAMO DE FLORES -->
+<section class="section section-dark" id="juego">
+  <div class="section-label">  </div>
+  <h2 class="section-title">Flores para <br><em>la psicóloga</em></h2>
+
+  <div class="bouquet-wrap">
+    <svg class="bouquet-svg" id="bouquetSvg" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- TALLOS -->
+      <g class="stems">
+        <path d="M200 380 Q190 320 170 270" stroke="#4a7c4e" stroke-width="3" fill="none" class="stem"/>
+        <path d="M200 380 Q200 310 200 255" stroke="#4a7c4e" stroke-width="3" fill="none" class="stem"/>
+        <path d="M200 380 Q210 320 230 270" stroke="#4a7c4e" stroke-width="3" fill="none" class="stem"/>
+        <path d="M200 380 Q180 300 150 240" stroke="#4a7c4e" stroke-width="3" fill="none" class="stem"/>
+        <path d="M200 380 Q220 300 250 240" stroke="#4a7c4e" stroke-width="3" fill="none" class="stem"/>
+        <path d="M200 380 Q165 290 130 220" stroke="#4a7c4e" stroke-width="2.5" fill="none" class="stem"/>
+        <path d="M200 380 Q235 290 270 220" stroke="#4a7c4e" stroke-width="2.5" fill="none" class="stem"/>
+      </g>
+
+      <!-- HOJAS -->
+      <g class="leaves">
+        <ellipse cx="178" cy="320" rx="14" ry="7" fill="#5a9e5e" transform="rotate(-40 178 320)" class="leaf"/>
+        <ellipse cx="222" cy="320" rx="14" ry="7" fill="#5a9e5e" transform="rotate(40 222 320)" class="leaf"/>
+        <ellipse cx="160" cy="290" rx="12" ry="6" fill="#4a8e4e" transform="rotate(-55 160 290)" class="leaf"/>
+        <ellipse cx="240" cy="290" rx="12" ry="6" fill="#4a8e4e" transform="rotate(55 240 290)" class="leaf"/>
+      </g>
+
+      <!-- FLORES -->
+      <!-- Rosa roja - centro -->
+      <g class="flower" data-msg=" 🌹" transform="translate(200, 248)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#e8192c" opacity="0.9" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#d01020" opacity="0.85" transform="rotate(51.4)"/>
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#e8192c" opacity="0.9" transform="rotate(102.8)"/>
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#d01020" opacity="0.85" transform="rotate(154.2)"/>
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#e8192c" opacity="0.9" transform="rotate(205.6)"/>
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#d01020" opacity="0.85" transform="rotate(257)"/>
+          <ellipse cx="0" cy="-18" rx="10" ry="16" fill="#e8192c" opacity="0.9" transform="rotate(308.4)"/>
+        </g>
+        <circle cx="0" cy="0" r="9" fill="#c0000a"/>
+        <circle cx="0" cy="0" r="5" fill="#ff4444"/>
+      </g>
+
+      <!-- Girasol - izquierda -->
+      <g class="flower" data-msg="☀️" transform="translate(170, 263)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFD700" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFC200" transform="rotate(45)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFD700" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFC200" transform="rotate(135)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFD700" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFC200" transform="rotate(225)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFD700" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-16" rx="7" ry="14" fill="#FFC200" transform="rotate(315)"/>
+        </g>
+        <circle cx="0" cy="0" r="9" fill="#8B4513"/>
+        <circle cx="0" cy="0" r="5" fill="#A0522D"/>
+      </g>
+
+      <!-- Margarita - derecha -->
+      <g class="flower" data-msg="Sos mi flor favorita 🌸" transform="translate(230, 263)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#ffffff" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#f0f0f0" transform="rotate(36)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#ffffff" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#f0f0f0" transform="rotate(108)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#ffffff" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#f0f0f0" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#ffffff" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#f0f0f0" transform="rotate(252)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#ffffff" transform="rotate(288)"/>
+          <ellipse cx="0" cy="-15" rx="6" ry="13" fill="#f0f0f0" transform="rotate(324)"/>
+        </g>
+        <circle cx="0" cy="0" r="8" fill="#FFD700"/>
+        <circle cx="0" cy="0" r="4" fill="#FFA500"/>
+      </g>
+
+      <!-- Flor rosa - izquierda lejos -->
+      <g class="flower" data-msg="Con vos todo es más bonito 💕" transform="translate(148, 235)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF69B4" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF1493" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF69B4" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF1493" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF69B4" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF1493" transform="rotate(300)"/>
+        </g>
+        <circle cx="0" cy="0" r="7" fill="#FF69B4"/>
+        <circle cx="0" cy="0" r="3.5" fill="#fff"/>
+      </g>
+
+      <!-- Flor lavanda - derecha lejos -->
+      <g class="flower" data-msg="💜" transform="translate(252, 235)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#9B59B6" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#8E44AD" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#9B59B6" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#8E44AD" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#9B59B6" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#8E44AD" transform="rotate(300)"/>
+        </g>
+        <circle cx="0" cy="0" r="7" fill="#9B59B6"/>
+        <circle cx="0" cy="0" r="3.5" fill="#fff"/>
+      </g>
+
+      <!-- Flor naranja - extremo izq -->
+      <g class="flower" data-msg=" 🧡" transform="translate(128, 216)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF8C00" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF6600" transform="rotate(51.4)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF8C00" transform="rotate(102.8)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF6600" transform="rotate(154.2)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF8C00" transform="rotate(205.6)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF6600" transform="rotate(257)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF8C00" transform="rotate(308.4)"/>
+        </g>
+        <circle cx="0" cy="0" r="7" fill="#FF6600"/>
+        <circle cx="0" cy="0" r="3.5" fill="#FFD700"/>
+      </g>
+
+      <!-- Flor celeste - extremo der -->
+      <g class="flower" data-msg="💙" transform="translate(272, 216)">
+        <g class="petals-group">
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#87CEEB" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#4169E1" transform="rotate(51.4)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#87CEEB" transform="rotate(102.8)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#4169E1" transform="rotate(154.2)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#87CEEB" transform="rotate(205.6)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#4169E1" transform="rotate(257)"/>
+          <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#87CEEB" transform="rotate(308.4)"/>
+        </g>
+        <circle cx="0" cy="0" r="7" fill="#4169E1"/>
+        <circle cx="0" cy="0" r="3.5" fill="#fff"/>
+      </g>
+
+      <!-- Fila superior - flores más arriba -->
+<g class="flower" data-msg="🌺" transform="translate(200, 195)">
+  <g class="petals-group">
+    <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF4500" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF6347" transform="rotate(60)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF4500" transform="rotate(120)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF6347" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF4500" transform="rotate(240)"/>
+    <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FF6347" transform="rotate(300)"/>
+  </g>
+  <circle cx="0" cy="0" r="7" fill="#FF4500"/>
+  <circle cx="0" cy="0" r="3.5" fill="#FFD700"/>
+</g>
+
+<g class="flower" data-msg="💛" transform="translate(165, 200)">
+  <g class="petals-group">
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFE135" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFD700" transform="rotate(51.4)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFE135" transform="rotate(102.8)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFD700" transform="rotate(154.2)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFE135" transform="rotate(205.6)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFD700" transform="rotate(257)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FFE135" transform="rotate(308.4)"/>
+  </g>
+  <circle cx="0" cy="0" r="7" fill="#FFA500"/>
+  <circle cx="0" cy="0" r="3.5" fill="#fff"/>
+</g>
+
+<g class="flower" data-msg="🌷" transform="translate(235, 200)">
+  <g class="petals-group">
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF007F" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF69B4" transform="rotate(51.4)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF007F" transform="rotate(102.8)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF69B4" transform="rotate(154.2)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF007F" transform="rotate(205.6)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF69B4" transform="rotate(257)"/>
+    <ellipse cx="0" cy="-13" rx="7" ry="11" fill="#FF007F" transform="rotate(308.4)"/>
+  </g>
+  <circle cx="0" cy="0" r="7" fill="#FF007F"/>
+  <circle cx="0" cy="0" r="3.5" fill="#fff"/>
+</g>
+
+<g class="flower" data-msg="🤍" transform="translate(148, 178)">
+  <g class="petals-group">
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#E8E8E8" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#ffffff" transform="rotate(45)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#E8E8E8" transform="rotate(90)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#ffffff" transform="rotate(135)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#E8E8E8" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#ffffff" transform="rotate(225)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#E8E8E8" transform="rotate(270)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#ffffff" transform="rotate(315)"/>
+  </g>
+  <circle cx="0" cy="0" r="6" fill="#FFD700"/>
+  <circle cx="0" cy="0" r="3" fill="#FFA500"/>
+</g>
+
+<g class="flower" data-msg="💖" transform="translate(252, 178)">
+  <g class="petals-group">
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#DA70D6" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#EE82EE" transform="rotate(60)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#DA70D6" transform="rotate(120)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#EE82EE" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#DA70D6" transform="rotate(240)"/>
+    <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#EE82EE" transform="rotate(300)"/>
+  </g>
+  <circle cx="0" cy="0" r="6" fill="#DA70D6"/>
+  <circle cx="0" cy="0" r="3" fill="#fff"/>
+</g>
+
+      <!-- Envoltorio -->
+      <path d="M160 380 Q200 360 240 380 L230 420 Q200 410 170 420 Z" fill="#ff9999" opacity="0.7"/>
+      <path d="M170 380 Q200 365 230 380 L222 415 Q200 408 178 415 Z" fill="#ffcccc" opacity="0.5"/>
+      <path d="M195 370 Q200 350 205 370" stroke="#ff6666" stroke-width="1.5" fill="none"/>
+
+    </svg>
+
+    <div class="bouquet-msg" id="bouquetMsg"></div>
+
+    <button class="bouquet-btn" id="bouquetBtn">
+      <span>🌸 Hacer florecer</span>
+    </button>
+  </div>
+</section>
+
+  
+  <div class="photo-modal" id="photoModal">
+    <div class="photo-modal-inner">
+      <button class="photo-modal-close" id="photoModalClose">✕</button>
+      <img id="photoModalImg" src="" alt="" />
+      <p class="photo-modal-msg" id="photoModalMsg"></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    de Luciano para Milagros
+  </footer>
+
+</body>
+</html>
