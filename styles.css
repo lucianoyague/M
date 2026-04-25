@@ -38,7 +38,7 @@ body {
 /* ── Cursor personalizado ── */
 .cursor {
   width: 12px; height: 12px;
-  background: var(--white);
+  background: var(--red);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -48,7 +48,7 @@ body {
 }
 .cursor-trail {
   width: 32px; height: 32px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--red);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -56,6 +56,12 @@ body {
   transform: translate(-50%, -50%);
   transition: left 0.12s ease, top 0.12s ease;
   opacity: 0.4;
+}
+
+/* Ocultar cursor personalizado en móvil */
+@media (hover: none) and (pointer: coarse) {
+  .cursor, .cursor-trail { display: none; }
+  body { cursor: auto; }
 }
 
 /* ── Pétalos ── */

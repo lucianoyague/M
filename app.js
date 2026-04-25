@@ -4,19 +4,26 @@
    razones flip, juego, modal de fotos
    ============================================= */
 
-// ── 1. Cursor personalizado ───────────────────
+// ── 1. Cursor personalizado (solo desktop) ────
 const cursor      = document.getElementById('cursor');
 const cursorTrail = document.getElementById('cursorTrail');
 
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top  = e.clientY + 'px';
-  setTimeout(() => {
-    cursorTrail.style.left = e.clientX + 'px';
-    cursorTrail.style.top  = e.clientY + 'px';
-  }, 80);
-});
+const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
+if (!isTouchDevice) {
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+    setTimeout(() => {
+      cursorTrail.style.left = e.clientX + 'px';
+      cursorTrail.style.top  = e.clientY + 'px';
+    }, 80);
+  });
+} else {
+  cursor.style.display      = 'none';
+  cursorTrail.style.display = 'none';
+  document.body.style.cursor = 'auto';
+}
 
 // ── 2. Latas de Coca-Cola flotantes ──────────
 const petalsContainer = document.getElementById('petals');
@@ -103,6 +110,7 @@ function closePhotoModal() {
 }
 
 
+
 // ── 6. Flip de razones ────────────────────────
 document.querySelectorAll('.reason-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -171,7 +179,7 @@ const photoUpload = document.getElementById('photoUpload');
 const gallery     = document.getElementById('gallery');
 
 const CAPTIONS = [
-  '',
+  '💕',
   '🌹',
   '✨',
   '💖',
@@ -179,28 +187,35 @@ const CAPTIONS = [
 ];
 
 photoUpload.addEventListener('change', (e) => {
-  const files = Array.from(e.target.files).slice(0, 5);
+  const files = Array.from(e.target.files);
 
   files.forEach((file, i) => {
     if (!file.type.startsWith('image/')) return;
 
     const reader = new FileReader();
-    reader.onload = (ev) => {
+
+    reader.addEventListener('load', (ev) => {
       const card = document.createElement('div');
       card.classList.add('photo-card', 'uploaded');
-      card.dataset.msg = 'Muy buena';
+      card.dataset.msg = '¡Una foto nueva! 💖';
       card.style.animationDelay = `${i * 0.1}s`;
 
-      card.innerHTML = `
-        <div class="photo-frame">
-          <img src="${ev.target.result}" alt="Nuestra foto" />
-        </div>
-        <div class="photo-caption">${CAPTIONS[i % CAPTIONS.length]}</div>
-      `;
+      const frame = document.createElement('div');
+      frame.classList.add('photo-frame');
 
-      // Click para abrir modal
+      const img = document.createElement('img');
+      img.src = ev.target.result;
+      img.alt = 'Nuestra foto';
+
+      const caption = document.createElement('div');
+      caption.classList.add('photo-caption');
+      caption.textContent = CAPTIONS[i % CAPTIONS.length];
+
+      frame.appendChild(img);
+      card.appendChild(frame);
+      card.appendChild(caption);
+
       card.addEventListener('click', () => {
-        const img = card.querySelector('img');
         photoModalImg.src = img.src;
         photoModalMsg.textContent = card.dataset.msg;
         photoModal.classList.add('show');
@@ -208,14 +223,10 @@ photoUpload.addEventListener('change', (e) => {
       });
 
       gallery.appendChild(card);
-
-      // Aplicar scroll reveal
-      observer.observe(card);
-    };
+    });
 
     reader.readAsDataURL(file);
   });
 
-  // Limpiar input para poder subir las mismas fotos de nuevo
   photoUpload.value = '';
 });
