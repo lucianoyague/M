@@ -1,6 +1,6 @@
 # 🌹 Para Milagros
 
-Página web romántica e interactiva hecha con HTML · CSS · JavaScript vanilla.
+Página web interactiva hecha con HTML · CSS · JavaScript vanilla.
 
 ##  Estructura
 
